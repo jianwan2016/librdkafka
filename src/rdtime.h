@@ -143,7 +143,7 @@ static RD_INLINE int rd_timeout_remains (rd_ts_t abs_timeout) {
 
 	if (abs_timeout == RD_POLL_INFINITE ||
 	    abs_timeout == RD_POLL_NOWAIT)
-		return (int)abs_timeout;
+		return (int)abs(abs_timeout);
 
 	timeout_ms = (int)((abs_timeout - rd_clock()) / 1000);
 	if (timeout_ms <= 0)
